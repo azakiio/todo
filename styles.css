@@ -1,0 +1,123 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+  font-size: 18px;
+}
+
+
+body {
+  width: 500px;
+  margin: auto;
+  padding: 32px;
+  border-radius: 16px;
+}
+
+
+/* Style the list items */
+ul li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+  padding: 12px 8px 12px 40px;
+  list-style-type: none;
+  background: #eee;
+  /* transition: 0.5s; */
+
+  /* make the list items unselectable */
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Set all odd list items to a different color (zebra-stripes) */
+ul li:nth-child(odd) {
+  background: #f9f9f9;
+}
+
+/* Darker background-color on hover */
+ul li:hover {
+  background: #ddd;
+}
+
+/* When clicked on, add a background color and strike out text */
+ul li.checked {
+  background: #888;
+  color: #fff;
+  text-decoration: line-through;
+}
+
+/* Add a "checked" mark when clicked on */
+ul li.checked::before {
+  content: "✔️";
+  position: absolute;
+  color: white;
+  left: 16px;
+  /* transform: rotate(45deg); */
+  /* height: 15px;
+  width: 7px; */
+}
+
+/* Style the close button */
+.close {
+  padding: 16px;
+}
+
+.close:hover {
+  background-color: #f44336;
+  color: white;
+}
+
+/* Style the header */
+.header {
+  background-color: blue;
+  padding: 30px 40px;
+  color: white;
+  text-align: center;
+}
+
+
+.form {
+  display: flex;
+  gap: 16px;
+}
+
+/* Style the input */
+input {
+  margin: 0;
+  border: none;
+  border-radius: 16px;
+  width: 75%;
+  padding: 16px;
+  font-size: 18px;
+}
+
+input:focus-visible {
+  outline-style: solid;
+  outline-width: 2px;
+  outline-color: black;
+}
+
+/* Style the "Add" button */
+.addBtn {
+  cursor: pointer;
+  background-color: transparent;
+  padding: 10px;
+  border: none;
+  width: 25%;
+  /* background: #d9d9d9; */
+  color: white;
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+  border-radius: 1rem;
+}
+
+.addBtn:hover {
+  background-color: #bbb;
+}

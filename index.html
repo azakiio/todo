@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hallo</title>
+    <desc></desc>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" async defer></script>
+  </head>
+
+  <body>
+    <div class="header">
+      <h2 style="margin: 5px">My To Do List</h2>
+      <form class="form">
+        <input
+          type="text"
+          id="myInput"
+          required
+          placeholder="Was getan werden muss?"
+        />
+        <button class="addBtn">Add</button>
+      </form>
+    </div>
+
+    <ul id="list">
+      <li>Hit the gym and here's a really long todo item</li>
+      <li class="checked">Pay bills</li>
+      <li>Meet George</li>
+      <li>Buy eggs</li>
+      <li>Read a book</li>
+      <li>Organize office</li>
+    </ul>
+
+    <!-- <ul id="otherList">
+      my other list that's not a todolist
+
+      <li>Hit the gym and here's a really long todo item</li>
+      <li class="checked">Pay bills</li>
+      <li>Meet George</li>
+      <li>Buy eggs</li>
+      <li>Read a book</li>
+      <li>Organize office</li>
+    </ul> -->
+
+    <!-- <script>
+      var listItems = document.querySelector("#list").querySelectorAll('li');
+      listItems.forEach((item) => {
+        item.addEventListener("click", function (ev) {
+          item.classList.toggle("done");
+        });
+      });
+    </script> -->
+  </body>
+</html>
