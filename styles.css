@@ -3,17 +3,15 @@
   padding: 0;
   box-sizing: border-box;
   font-family: sans-serif;
-  font-size: 18px;
 }
 
-
 body {
-  width: 500px;
+  width: 100%;
+  max-width: 800px;
   margin: auto;
   padding: 32px;
   border-radius: 16px;
 }
-
 
 /* Style the list items */
 ul li {
@@ -24,7 +22,7 @@ ul li {
   position: relative;
   padding: 12px 8px 12px 40px;
   list-style-type: none;
-  background: #eee;
+  background: lightgrey;
   /* transition: 0.5s; */
 
   /* make the list items unselectable */
@@ -34,20 +32,40 @@ ul li {
   user-select: none;
 }
 
-/* Set all odd list items to a different color (zebra-stripes) */
-ul li:nth-child(odd) {
-  background: #f9f9f9;
+/* ul li:nth-child(odd) {
+  background: red;
+} */
+
+/* ul */
+.rounded-list {
+  /* border: 1px solid black; */
+  /* border-radius: 2rem; */
+  overflow: hidden;
 }
+
+/* li inside ul */
+.rounded-list li {
+  text-wrap: balance;
+  margin-bottom: 1rem;
+  border-radius: 1rem;
+}
+
+/* Set all odd list items to a different color (zebra-stripes) */
 
 /* Darker background-color on hover */
 ul li:hover {
-  background: #ddd;
+  /* background: lightseagreen; */
 }
 
 /* When clicked on, add a background color and strike out text */
 ul li.checked {
-  background: #888;
-  color: #fff;
+  background: lightgreen;
+  opacity: 0.5;
+
+  translate: 100%;
+}
+
+ul li.checked div {
   text-decoration: line-through;
 }
 
@@ -65,21 +83,46 @@ ul li.checked::before {
 /* Style the close button */
 .close {
   padding: 16px;
+  background: none;
+  border: 2px solid black;
+  border-radius: 50%;
+  width: 3rem;
+  height: 3rem;
+
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: scale 0.3s ease;
+  will-change: scale;
 }
 
 .close:hover {
-  background-color: #f44336;
-  color: white;
+  scale: 1.2;
+
+  
 }
 
 /* Style the header */
 .header {
-  background-color: blue;
+  background-color: lightblue;
   padding: 30px 40px;
   color: white;
   text-align: center;
+  margin-bottom: 2rem;
+  border-radius: 2rem;
 }
 
+.box {
+  background-color: red;
+  width: 20rem;
+  height: 20rem;
+
+  margin: 3rem;
+  border-radius: 50%;
+}
 
 .form {
   display: flex;

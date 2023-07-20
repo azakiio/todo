@@ -1,11 +1,22 @@
 // Create a "close" button and append it to each list item
 var myNodelist = document.getElementsByTagName("li");
+
 var i;
 for (i = 0; i < myNodelist.length; i++) {
+  const innerText = myNodelist[i].innerText;
+
   var closeButton = document.createElement("button");
-  var txt = document.createTextNode("\u00D7");
+  var txt = document.createTextNode("❌");
+
+  var textDiv = document.createElement("div");
+  var innerTextNode = document.createTextNode(innerText);
+  textDiv.appendChild(innerTextNode);
+
   closeButton.className = "close";
   closeButton.appendChild(txt);
+
+  myNodelist[i].innerText = "";
+  myNodelist[i].appendChild(textDiv);
   myNodelist[i].appendChild(closeButton);
 }
 
@@ -26,7 +37,15 @@ list.addEventListener(
   "click",
   function (ev) {
     if (ev.target.tagName === "LI") {
-      ev.target.classList.toggle("checked");
+      const animationDuration = 1000;
+
+      ev.target.classList.add("checked");
+      ev.target.style.transition = `translate ${animationDuration}ms ease`;
+      setTimeout(() => {
+        ev.target.remove();
+      }, animationDuration - 200);
+      //wait 2 seconds
+      // remove element
     }
   },
   false
@@ -45,10 +64,9 @@ function addTodo(event) {
   document.getElementById("list").appendChild(li);
   document.getElementById("myInput").value = "";
 
-
   // Create a "close" button and append it to each list item
   var button = document.createElement("button");
-  var txt = document.createTextNode("X");
+  var txt = document.createTextNode("❌");
   button.className = "close";
   button.appendChild(txt);
   li.appendChild(button);
@@ -59,5 +77,4 @@ function addTodo(event) {
       parent.style.display = "none";
     };
   }
-
 }
